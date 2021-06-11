@@ -399,3 +399,8 @@ D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\refs\System.
 D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\refs\System.Xml.XPath.XDocument.dll
 D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\refs\WindowsBase.dll
 D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\MusicPlace.Views.pdb
+D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\omria\Proyectos\Inresorts\MusicPlace\MusicPlace\bin\Debug\net5.0\MusicPlace.xml

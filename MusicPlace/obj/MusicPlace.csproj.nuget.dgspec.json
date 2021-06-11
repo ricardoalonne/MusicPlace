@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Familia Arju\\source\\repos\\ricardoalonne\\MusicPlace\\MusicPlace\\MusicPlace.csproj": {}
+    "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\MusicPlace.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Familia Arju\\source\\repos\\ricardoalonne\\MusicPlace\\MusicPlace\\MusicPlace.csproj": {
+    "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\MusicPlace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Familia Arju\\source\\repos\\ricardoalonne\\MusicPlace\\MusicPlace\\MusicPlace.csproj",
+        "projectUniqueName": "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\MusicPlace.csproj",
         "projectName": "MusicPlace",
-        "projectPath": "C:\\Users\\Familia Arju\\source\\repos\\ricardoalonne\\MusicPlace\\MusicPlace\\MusicPlace.csproj",
-        "packagesPath": "C:\\Users\\Familia Arju\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Familia Arju\\source\\repos\\ricardoalonne\\MusicPlace\\MusicPlace\\obj\\",
+        "projectPath": "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\MusicPlace.csproj",
+        "packagesPath": "C:\\Users\\omria\\.nuget\\packages\\",
+        "outputPath": "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Familia Arju\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\omria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -71,6 +71,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.4, )"
             }
           },
           "imports": [

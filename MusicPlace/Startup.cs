@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using MusicPlace.Data;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,15 @@ namespace MusicPlace
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("V1.0", new OpenApiInfo
+                {
+                    Title = "MusicPlace API",
+                    Version = "V1.0"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +79,12 @@ namespace MusicPlace
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+                c.SwaggerEndpoint("/swagger/V1.0/swagger.json", "MusicPlace API")
+            );
         }
     }
 }
