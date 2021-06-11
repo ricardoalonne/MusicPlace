@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MusicPlace.Models.Artist>
+
+<p class="mb-4">
+    Aquí podrás administrar a los artistas del momento.
+</p>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+        <h5 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h5>
+        <button class="btn btn-primary"><i class="fas fa-fw fa-plus-circle"></i> Nuevo Artista</button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th scope="col">
+                            <i class="fas fa-cogs"></i>
+                            Ajustes
+                        </th>
+                    </tr>
+                </thead>
+                @*<tfoot>
+                    <tr>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th scope="col" class="fas fa-cogs">
+                            Ajustes
+                        </th>
+                    </tr>
+                </tfoot>*@
+                <tbody>
+                    @if (Model != null)
+                        @foreach (var item in Model)
+                        {
+                            <tr class="line--hover">
+                                <td scope="row">
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    <a asp-controller="Artist" asp-action="VerDetalle" asp-route-id="@item.Id" alt="Ver Detalle" class="fas fa-eye text-dark">  </a>
+                                    <a asp-controller="Artist" asp-action="Actualizar" asp-route-id="@item.Id" alt="Editar" class="fas fa-edit text-dark">  </a>
+                                    <a asp-controller="Artist" asp-action="Eliminar" asp-route-id="@item.Id" alt="Eliminar" class="fas fa-ban text-danger">  </a>
+                                </td>
+                            </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

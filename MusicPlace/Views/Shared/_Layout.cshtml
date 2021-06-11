@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MusicPlace</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.iconscout.com/icon/premium/png-256-thumb/music-1115-1096011.png">
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <link href="~/assets/vendor/fontawesome-free/css/all.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="~/assets/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="~/assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+
+
+</head>
+<body id="page-top">
+    <div id="wrapper">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"  asp-area="" asp-controller="Home" asp-action="Index">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-icons"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">MusicPlace</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item @ViewBag.HomePageActive">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-fw fa-house-damage"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Música
+            </div>
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item @ViewBag.GeneralPageActive">
+                <a class="nav-link" asp-area="" asp-controller="General" asp-action="Index">
+                    <i class="fas fa-fw fa-headphones-alt"></i>
+                    <span>General</span>
+                </a>
+            </li>
+
+            <li class="nav-item @ViewBag.ArtistPageActive">
+                <a class="nav-link" asp-area="" asp-controller="Artist" asp-action="Index">
+                    <i class="fas fa-fw fa-microphone-alt"></i>
+                    <span>Artistas</span>
+                </a>
+            </li>
+            <li class="nav-item @ViewBag.AlbumPageActive">
+                <a class="nav-link" asp-area="" asp-controller="Album" asp-action="Index">
+                    <i class="fas fa-fw fa-compact-disc"></i>
+                    <span>Albunes</span>
+                </a>
+            </li>
+            <li class="nav-item @ViewBag.SongPageActive">
+                <a class="nav-link" asp-area="" asp-controller="Song" asp-action="Index">
+                    <i class="fas fa-fw fa-music"></i>
+                    <span>Música</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Usuarios
+            </div>
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item @ViewBag.UserPageActive">
+                <a class="nav-link" asp-area="" asp-controller="User" asp-action="Index">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Usuarios</span>
+                </a>
+            </li>
+            <li class="nav-item @ViewBag.ClientPageActive">
+                <a class="nav-link" asp-area="" asp-controller="Client" asp-action="Index">
+                    <i class="far fa-fw fa-user"></i>
+                    <span>Clientes</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!--DIVIDER-->
+                        @*<div class="topbar-divider d-none d-sm-block"></div>*@
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ricardo Arbildo J.</span>
+                                <img class="img-profile rounded-circle"
+                                     src="https://cdn4.iconfinder.com/data/icons/gradient-circle-blue/36/1014-512.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Mi Perfil
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Cerrar Sesión
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">@ViewBag.Encabezado</h1>
+                        @*<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+                        </a>*@
+                    </div>
+
+                    <main role="main">
+                        @RenderBody()
+                    </main>
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Ricardo Arbildo J. 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+
+    </div>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >¿Desea cerrar sesión?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script src="~/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script src="~/assets/js/sb-admin-2.min.js"></script>
+
+    <script src="~/assets/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <script src="~/assets/js/demo/datatables-demo.js"></script>
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<MusicPlace.MTOs.ArtistFullDTO>
+
+<p class="mb-4">
+    Aquí podrás administrar a los artistas del momento.
+</p>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex align-items-center">
+        <h5 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Artista
+                        </th>
+                        <th scope="col">
+                            Contenido
+                        </th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th scope="col">
+                            Artista
+                        </th>
+                        <th scope="col">
+                            Contenido
+                        </th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @if (Model != null)
+                        @foreach (var item in Model)
+                        {
+                            <tr class="line--hover">
+                                <td scope="row">
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td scope="row">
+                                    @foreach (var album in item.Albums)
+                                    {
+                                        <hr />
+                                        <div class="d-flex">
+                                            <div class="col-8">
+                                                <b>Album</b>
+                                                <p> @Html.DisplayFor(modelItem => album.Name)</p>
+                                                <p> @Html.DisplayFor(modelItem => album.Description)</p>
+                                                <p> @Html.DisplayFor(modelItem => album.Year)</p>
+                                            </div>
+                                            <div class="col-4">
+                                                <b>Canción</b>
+                                                @foreach (var song in album.Songs)
+                                                {
+                                                    <hr />
+                                                    <p> @Html.DisplayFor(modelItem => song.Name)</p>
+                                                    <p> @Html.DisplayFor(modelItem => song.Duration)</p>
+                                                    <hr />
+                                                }
+                                            </div>
+                                        </div>
+                                        
+                                        <hr />
+                                    }
+
+                                </td>
+                                
+                            </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
