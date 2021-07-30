@@ -449,7 +449,7 @@ AS
 BEGIN
 	UPDATE ArtistAlbum SET 
 		AlbumId = @albumId,
-		ArtistId = @albumId,
+		ArtistId = @artistId,
 		Active = 1
 	WHERE Id = @id
 	SELECT * FROM ArtistAlbum WHERE id = @id
