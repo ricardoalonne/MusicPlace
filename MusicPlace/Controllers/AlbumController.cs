@@ -53,12 +53,12 @@ namespace MusicPlace.Controllers
 
             ViewBag.AllArtist = (Artist.ToSelectListItems(await HttpRequestsDirect.GetAll<Artist>(urlAPI.Artist, token)));
 
-            Album album = new();
+            AlbumDTO albumDTO;
 
-            if (id == -1) album = null;
-            else album = await HttpRequestsDirect.GetById<Album>(id, urlAPI.Album, token);
+            if (id == -1) albumDTO = null;
+            else albumDTO = new AlbumDTO().ToDTO(await HttpRequestsDirect.GetById<Album>(id, urlAPI.Album, token));
 
-            return View(album);
+            return View(albumDTO);
         }
 
         [HttpPost]
@@ -86,8 +86,10 @@ namespace MusicPlace.Controllers
                 if (albumDTO.Id == -1) artistAlbum = await HttpRequestsDirect.Post<ArtistAlbumDTO>(artistAlbum, urlAPI.ArtistAlbum, token);
                 else 
                 {
-                    var olddata = await HttpRequestsDirect.GetById<ArtistAlbumDTO>(albumDTO.Id, urlAPI.AlbumArtistByIdAlbum(), token);
-
+                    //Error al consultar a la api
+                    //var olddata = await HttpRequestsDirect.GetById<ArtistAlbumDTO>(albumDTO.Id, urlAPI.AlbumArtistByIdAlbum(), token);
+                    var olddata = await new MusicPlace.Data.MusicPlaceDBConnection().GetArtistAlbumByIdAlbum(albumDTO.Id);
+                    artistAlbum.Id = olddata.Id;
                     artistAlbum = await HttpRequestsDirect.Put<ArtistAlbumDTO>(artistAlbum, olddata.Id, urlAPI.ArtistAlbum, token);
                 }
                 if (artistAlbum != null)
