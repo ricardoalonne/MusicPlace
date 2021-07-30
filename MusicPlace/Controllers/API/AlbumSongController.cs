@@ -109,6 +109,21 @@ namespace MusicPlace.Controllers.API
             }
         }
 
+        [HttpGet("Song/{id}")]
+        public async Task<AlbumSongDTO> GetByIdSong(int id)
+        {
+            try
+            {
+                connection = new();
+                return await connection.GetAlbumSongByIdSong(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
         [HttpGet("Albums/all")]
         public async Task<List<SongsAlbumDTO>> GetSongsByAllAlbum()
         {

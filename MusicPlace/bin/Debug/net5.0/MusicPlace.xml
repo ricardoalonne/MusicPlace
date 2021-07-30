@@ -4,15 +4,5 @@
         <name>MusicPlace</name>
     </assembly>
     <members>
-        <member name="M:MusicPlace.Helpers.GenericStoreProcedure.Procedureint``1(System.String,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
-            <summary>
-            retorna un entero basado en los datos del store procedure
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="storeProcvcedure"></param>
-            <param name="_conex"></param>
-            <param name="parametros"></param>
-            <returns></returns>
-        </member>
     </members>
 </doc>

@@ -30,6 +30,9 @@ namespace MusicPlace.Data
         public string AlbumSong { get; }
         public string ArtistAlbum { get; }
 
+        public string AlbumArtistByIdAlbum() { return ArtistAlbum + "/Album/"; }
+        public string SongAlbumByIdSong() { return AlbumSong + "/Song/"; }
+
 
         public string AlbumsAllArtistActive() { return ArtistAlbum + "/Artist/all"; }
         public string AlbumsAllArtist() { return ArtistAlbum + "/all/Artist/all"; }

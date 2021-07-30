@@ -612,3 +612,22 @@ BEGIN
 		WHERE Album.Id = @albumId
 END
 GO
+
+
+CREATE OR ALTER   PROCEDURE [dbo].[GetById__AlbumSong_ByIdSong]
+	@id int
+AS
+BEGIN
+		SELECT * FROM AlbumSong
+		WHERE SongId = @id
+END
+GO
+
+CREATE OR ALTER   PROCEDURE [dbo].[GetById__ArtistAlbum_ByIdAlbum]
+	@id int
+AS
+BEGIN
+		SELECT * FROM ArtistAlbum
+		WHERE AlbumId = @id
+END
+GO

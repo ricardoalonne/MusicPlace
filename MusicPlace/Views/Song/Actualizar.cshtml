@@ -1,0 +1,50 @@
+﻿@model MusicPlace.MTOs.SongDTO
+
+@{
+    if (Model == null) ViewData["Title"] = "Registrar Nueva Canción";
+    else ViewData["Title"] = "Editar Datos de la Canción";
+}
+
+<p class="mb-4">
+    Aquí podrás administrar a las canciones del momento.
+</p>
+
+<form asp-controller="Song" asp-action="Actualizar" method="post" enctype="multipart/form-data">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h5 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h5>
+            <a class="btn btn-primary" asp-controller="Song" asp-action="Index" asp-route-id="-1"><i class="fas fa-fw fa-arrow-left"></i> Regresar a Canciones</a>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="IdAlbum" class="control-label"></label>
+                    <select asp-for="IdAlbum" asp-items="@ViewBag.AllAlbums" class="form-control"></select>
+                    <span asp-validation-for="IdAlbum" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Duration" class="control-label"></label>
+                    <input asp-for="Duration" class="form-control" />
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="text-center">
+                @if (Model != null)
+                {
+                    <input class="btn btn-primary" type="submit" value="Modificar Canción" />
+                }
+                else
+                {
+                    <input class="btn btn-primary" type="submit" value="Registrar Canción" />
+                }
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -7,7 +7,7 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between align-items-center">
         <h5 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h5>
-        <button class="btn btn-primary"><i class="fas fa-fw fa-plus-circle"></i> Nuevo Artista</button>
+        <a class="btn btn-primary" asp-controller="Artist" asp-action="Actualizar" asp-route-id="-1"><i class="fas fa-fw fa-plus-circle"></i> Nuevo Artista</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">

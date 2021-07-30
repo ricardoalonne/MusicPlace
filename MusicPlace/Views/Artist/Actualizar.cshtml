@@ -1,0 +1,39 @@
+﻿@model MusicPlace.Models.Artist
+
+@{ 
+    if(Model == null) ViewData["Title"] = "Registrar Nuevo Artista";
+    else ViewData["Title"] = "Editar Datos de Artista";
+}
+
+<p class="mb-4">
+    Aquí podrás administrar a los artistas del momento.
+</p>
+
+
+<form asp-controller="Artist" asp-action="Actualizar" method="post" enctype="multipart/form-data">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h5 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h5>
+            <a class="btn btn-outline-primary" asp-controller="Artist" asp-action="Index"><i class="fas fa-fw fa-arrow-left"></i> Regresar a Artistas</a>
+        </div>
+        <div class="card-body">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control text-to-upper-alau" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                @if (Model != null)
+                {
+                    <input class="btn btn-primary" type="submit" value="Modificar Artista" />
+                }
+                else
+                {
+                    <input class="btn btn-primary" type="submit" value="Registrar Artista" />
+                }
+            </div>
+        </div>
+    </div>
+</form>

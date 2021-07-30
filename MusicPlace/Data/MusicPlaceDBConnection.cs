@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using MusicPlace.Helpers;
+using WebPEIN;
 using MusicPlace.Models;
 using MusicPlace.Models.Pivote;
 using MusicPlace.MTOs;
@@ -55,7 +55,7 @@ namespace MusicPlace.Data
         {
             SqlParameter[] parametros = new SqlParameter[2];
             parametros[0] = new SqlParameter("@name", song.Name);
-            parametros[0] = new SqlParameter("@duration", song.Duration);
+            parametros[1] = new SqlParameter("@duration", song.Duration);
 
             return await GenericStoreProcedure.SendAndGetData<Song>("Post__Song", conn, parametros);
         }
@@ -335,6 +335,18 @@ namespace MusicPlace.Data
             return album;
         }
 
+        internal async Task<ArtistAlbumDTO> GetArtistAlbumByIdAlbum(int id)
+        {
+            SqlParameter[] parametros = new SqlParameter[1];
+            parametros[0] = new SqlParameter("@id", id);
+
+            var album = await GenericStoreProcedure.GetByParameters<ArtistAlbumDTO>("GetById__ArtistAlbum_ByIdAlbum", conn, parametros);
+
+            album.Artist = await GetByIdArtist(album.ArtistId);
+            album.Album = await GetByIdAlbum(album.AlbumId);
+
+            return album;
+        }
 
         internal async Task<List<AlbumsArtistDTO>> GetAlbumsAllArtist()
         {
@@ -522,6 +534,19 @@ namespace MusicPlace.Data
             parametros[0] = new SqlParameter("@id", id);
 
             var album = await GenericStoreProcedure.GetByParameters<AlbumSongDTO>("GetById__AlbumSong", conn, parametros);
+
+            album.Album = await GetByIdAlbum(album.AlbumId);
+            album.Song = await GetByIdSong(album.SongId);
+
+            return album;
+        }
+
+        internal async Task<AlbumSongDTO> GetAlbumSongByIdSong(int id)
+        {
+            SqlParameter[] parametros = new SqlParameter[1];
+            parametros[0] = new SqlParameter("@id", id);
+
+            var album = await GenericStoreProcedure.GetByParameters<AlbumSongDTO>("GetById__AlbumSong_ByIdSong", conn, parametros);
 
             album.Album = await GetByIdAlbum(album.AlbumId);
             album.Song = await GetByIdSong(album.SongId);

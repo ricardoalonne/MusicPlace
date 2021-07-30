@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\MusicPlace.csproj": {}
+    "D:\\omria\\Proyectos\\TestWeb\\MusicPlace\\MusicPlace\\MusicPlace.csproj": {}
   },
   "projects": {
-    "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\MusicPlace.csproj": {
+    "D:\\omria\\Proyectos\\TestWeb\\MusicPlace\\MusicPlace\\MusicPlace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\MusicPlace.csproj",
+        "projectUniqueName": "D:\\omria\\Proyectos\\TestWeb\\MusicPlace\\MusicPlace\\MusicPlace.csproj",
         "projectName": "MusicPlace",
-        "projectPath": "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\MusicPlace.csproj",
+        "projectPath": "D:\\omria\\Proyectos\\TestWeb\\MusicPlace\\MusicPlace\\MusicPlace.csproj",
         "packagesPath": "C:\\Users\\omria\\.nuget\\packages\\",
-        "outputPath": "D:\\omria\\Proyectos\\Inresorts\\MusicPlace\\MusicPlace\\obj\\",
+        "outputPath": "D:\\omria\\Proyectos\\TestWeb\\MusicPlace\\MusicPlace\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,27 +50,33 @@
             },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.7, )"
+              "version": "[5.0.8, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.7, )"
+              "version": "[5.0.8, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[5.0.7, )"
+              "version": "[5.0.8, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
-              "version": "[5.0.7, )"
+              "version": "[5.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.7, )"
+              "version": "[5.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.7, )"
+              "version": "[5.0.8, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -95,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
